@@ -1,9 +1,18 @@
-const gulp = require('gulp')
-const minify = require('gulp-minify')
+const gulp = require('gulp');
+const rollup = require('gulp-rollup');
+const rename = require('gulp-rename');
 
 gulp.task('default', () => {
-    return gulp.src('src/hello.js')
-        .pipe(minify())
-        .pipe(gulp.dest('build/'))
+    return gulp.src('src/**/*.js')
+        .pipe(rollup({
+            input: './src/hello.js',
+            output: {
+                format: 'cjs'
+            },
+            // NOTE plugins is not supported in `gulp-rollup`
+            plugins: []
+        }))
+        .pipe(rename('bundle.js'))
+        .pipe(gulp.dest('./build'))
 })
 

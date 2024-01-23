@@ -1,7 +1,9 @@
-JavaScript Gulp Demo
+JavaScript Gulp Rollup Mix Import Require Demo
 ====================
 
-Gulp是JavaScript中一个构建工具，特点是通过pipe将各功能串起来，不像Grunt那样是基于配置。
+如果使用rollup，似乎无解。
+
+因为`gulp-rollup`不支持rollup plugins，生成的bundle.js既无法处理对自己文件的require，也无法包含对第三方库的require。
 
 ```
 npm install

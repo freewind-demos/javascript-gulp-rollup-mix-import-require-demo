@@ -1,3 +1,8 @@
+import { toLower } from './toLower';
+
 function hello() {
-    console.log('Hello, gulp')
+    const { capitalize } = require("./capitalize");
+    console.log(`Hello, ${capitalize(toLower('gulp'))}`)
 }
+
+hello();
